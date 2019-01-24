@@ -1,0 +1,21 @@
+.scss-homepage-container {
+  margin: 20px;
+}
+.scss-product-container {
+  display: flex;
+  flex-direction: row;
+}
+.scss-grid-md-3 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 33%;
+  margin: 0px 10px;
+}
+.scss-grid-md-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 66%;
+  margin: 0px 10px;
+}
