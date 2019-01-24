@@ -20,12 +20,14 @@ ShallowWrapper {
       "children": Array [
         <div
           className="scss-product-container"
+        />,
+        <h3
+          className="scss-shopping-cart-title"
         >
-          <ListProduct
-            data={null}
-          />
-        </div>,
-        <hr />,
+           SHOPPING CART - 
+          0
+           items
+        </h3>,
         null,
       ],
       "className": "scss-homepage-container",
@@ -37,33 +39,32 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <ListProduct
-            data={null}
-          />,
+          "children": null,
           "className": "scss-product-container",
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "data": null,
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
+        "rendered": null,
         "type": "div",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
-        "props": Object {},
+        "props": Object {
+          "children": Array [
+            " SHOPPING CART - ",
+            0,
+            " items",
+          ],
+          "className": "scss-shopping-cart-title",
+        },
         "ref": null,
-        "rendered": null,
-        "type": "hr",
+        "rendered": Array [
+          " SHOPPING CART - ",
+          0,
+          " items",
+        ],
+        "type": "h3",
       },
       null,
     ],
@@ -78,12 +79,14 @@ ShallowWrapper {
         "children": Array [
           <div
             className="scss-product-container"
+          />,
+          <h3
+            className="scss-shopping-cart-title"
           >
-            <ListProduct
-              data={null}
-            />
-          </div>,
-          <hr />,
+             SHOPPING CART - 
+            0
+             items
+          </h3>,
           null,
         ],
         "className": "scss-homepage-container",
@@ -95,33 +98,32 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <ListProduct
-              data={null}
-            />,
+            "children": null,
             "className": "scss-product-container",
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "data": null,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
+          "rendered": null,
           "type": "div",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
-          "props": Object {},
+          "props": Object {
+            "children": Array [
+              " SHOPPING CART - ",
+              0,
+              " items",
+            ],
+            "className": "scss-shopping-cart-title",
+          },
           "ref": null,
-          "rendered": null,
-          "type": "hr",
+          "rendered": Array [
+            " SHOPPING CART - ",
+            0,
+            " items",
+          ],
+          "type": "h3",
         },
         null,
       ],

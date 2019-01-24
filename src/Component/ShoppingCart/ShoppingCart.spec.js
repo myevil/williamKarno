@@ -9,6 +9,7 @@ describe('test hompage', () => {
   const wrapper = shallow(<ShoppingCart
     ShoppingCart={[]}
   />)
+  it('handleChangeQuantity should working properly');
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
   })

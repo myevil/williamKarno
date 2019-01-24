@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class ShoppingCart extends Component {
 
-  handleChangeQuantity(e, changeProductCart) {
+  handleChangeQuantity(e: SyntheticEvent<HTMLInputElement>, changeProductCart: object) {
     if(e.target.value >= 0){
       changeProductCart.quantity = e.target.value;
       changeProductCart.total = changeProductCart.quantity * changeProductCart.price;
@@ -10,7 +10,7 @@ class ShoppingCart extends Component {
     }
   }
 
-  handleDeleteProductOnCart(deletedProduct){
+  handleDeleteProductOnCart(deletedProduct: object){
     this.props.handleDeleteProduct(deletedProduct);
   }
 
