@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { getFetch } from '../Tools/api';
 import '../Scss/HomePage.scss';
-import Item from './Product/Item';
+import ListProduct from './Product/ListProduct';
+import ShoppingCart from './ShoppingCart/ShoppingCart';
 
 export class HomePage extends Component {
   constructor(props) {
     super(props)
     this.state = {
       data: null,
+      shoppingCartData: [],
     }
   }
 
@@ -21,47 +23,17 @@ export class HomePage extends Component {
   }
 
   render() {
-    const {data} = this.state;
-    console.log(data);
+    const {data, shoppingCartData} = this.state;
     return (
       <div className='scss-homepage-container'>
         <div className='scss-product-container'>
-          <div className='scss-grid-md-3'>
-            {data && <Item
-              img={data[1].image}
-              productName={data[1].name}
-              productPrice={data[1].price}
-              productCurrency={data[1].currency}
-            />}
-            {data && <Item
-              img={data[2].image}
-              productName={data[2].name}
-              productPrice={data[2].price}
-            />}
-          </div>
-          <div className='scss-grid-md-6'>
-            {data && <Item
-              img={data[0].image}
-              productName={data[0].name}
-              productPrice={data[0].price}
-            />}
-          </div>
-          <div className='scss-grid-md-3'>
-            {data && <Item
-              img={data[3].image}
-              productName={data[3].name}
-              productPrice={data[3].price}
-            />}
-            {data && <Item
-              img={data[4].image}
-              productName={data[4].name}
-              productPrice={data[4].price}
-            />}
-          </div>
+          <ListProduct
+            data={data}
+          />
         </div>
         <hr />
-        {data && <div className='scss-shopping-cart'>
-          <table>
+        {data && <div>
+          <table className='scss-shopping-cart'>
             <thead>
               <tr>
                 <th>&nbsp;</th>
@@ -72,18 +44,9 @@ export class HomePage extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <button>close</button>
-                </td>
-                <td>
-                  <img src={data[0].image} width='50px' height='50' alt='product'/>
-                  <span>product name</span>
-                </td>
-                <td>150000</td>
-                <td>2</td>
-                <td>300000</td>
-              </tr>
+              <ShoppingCart
+                ShoppingCart={shoppingCartData}
+              />
             </tbody>
           </table>
         </div>}
