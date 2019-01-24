@@ -4,13 +4,21 @@ import '../Scss/HomePage.scss';
 import ListProduct from './Product/ListProduct';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
 
-export class HomePage extends Component {
+type State = {
+  data: Array<Object>,
+  shoppingCartData: Array<Object>,
+}
+
+export class HomePage extends Component<State> {
   constructor(props) {
     super(props)
     this.state = {
       data: null,
       shoppingCartData: [],
     }
+    this.handleAddShoppingCartData = this.handleAddShoppingCartData.bind(this);
+    this.handleChangeQuantity = this.handleChangeQuantity.bind(this);
+    this.handleDeleteProduct = this.handleDeleteProduct.bind(this);
   }
 
   componentDidMount() {
@@ -22,17 +30,48 @@ export class HomePage extends Component {
       })
   }
 
+  handleAddShoppingCartData(productCartObject) {
+    const { shoppingCartData } = this.state;
+    const productAlreadyHaveInCart = shoppingCartData.filter(data => data.name === productCartObject.name);
+    if(productAlreadyHaveInCart.length === 0){
+      shoppingCartData.push(productCartObject);
+      this.setState({
+        shoppingCartData,
+      })
+    } else {
+      alert('product already have in the cart');
+    }
+  }
+
+  handleChangeQuantity(productCartObject){
+    const {shoppingCartData} = this.state;
+    const selectProduct = shoppingCartData.filter(data => data.name !== productCartObject.name);
+    selectProduct.push(productCartObject);
+    this.setState({
+      shoppingCartData: selectProduct,
+    })
+  }
+
+  handleDeleteProduct(deletedProduct){
+    const {shoppingCartData} = this.state;
+    const productAfterDeleted = shoppingCartData.filter(data => data.name !== deletedProduct.name);
+    this.setState({
+      shoppingCartData: productAfterDeleted,
+    })
+  }
+
   render() {
     const {data, shoppingCartData} = this.state;
     return (
       <div className='scss-homepage-container'>
         <div className='scss-product-container'>
-          <ListProduct
+          {data && <ListProduct
+            handleAddShoppingCartData={this.handleAddShoppingCartData}
             data={data}
-          />
+          />}
         </div>
-        <hr />
-        {data && <div>
+        <h3 className='scss-shopping-cart-title'> SHOPPING CART - {shoppingCartData.length} items</h3>
+        {data && <div style={{margin: '0 100px'}}>
           <table className='scss-shopping-cart'>
             <thead>
               <tr>
@@ -46,6 +85,8 @@ export class HomePage extends Component {
             <tbody>
               <ShoppingCart
                 ShoppingCart={shoppingCartData}
+                handleChangeQuantity={this.handleChangeQuantity}
+                handleDeleteProduct={this.handleDeleteProduct}
               />
             </tbody>
           </table>

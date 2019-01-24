@@ -1,42 +1,35 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Item from './Item';
 
-class ListProduct extends Component {
-
+class ListProduct extends React.PureComponent {
   render() {
-    const { data } = this.props
+    const { data, handleAddShoppingCartData } = this.props;
     return (
       <React.Fragment>
-        <div className='scss-grid-md-3'>
+        <div className={'scss-grid-md-3'}>
           {data && <Item
-            img={data[1].image}
-            productName={data[1].name}
-            productPrice={data[1].price}
-            productCurrency={data[1].currency}
+            data={data[1]}
+            handleAddShoppingCartData={handleAddShoppingCartData}
           />}
           {data && <Item
-            img={data[2].image}
-            productName={data[2].name}
-            productPrice={data[2].price}
+            data={data[2]}
+            handleAddShoppingCartData={handleAddShoppingCartData}
           />}
         </div>
         <div className='scss-grid-md-6'>
           {data && <Item
-            img={data[0].image}
-            productName={data[0].name}
-            productPrice={data[0].price}
+            data={data[0]}
+            handleAddShoppingCartData={handleAddShoppingCartData}
           />}
         </div>
         <div className='scss-grid-md-3'>
           {data && <Item
-            img={data[3].image}
-            productName={data[3].name}
-            productPrice={data[3].price}
+            data={data[3]}
+            handleAddShoppingCartData={handleAddShoppingCartData}
           />}
           {data && <Item
-            img={data[4].image}
-            productName={data[4].name}
-            productPrice={data[4].price}
+            data={data[4]}
+            handleAddShoppingCartData={handleAddShoppingCartData}
           />}
         </div>
       </React.Fragment>

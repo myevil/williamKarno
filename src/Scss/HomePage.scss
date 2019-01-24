@@ -1,24 +1,59 @@
+table, tr, th, td{
+  border: 1px solid black;
+}
 .scss-homepage-container {
-  margin: 20px;
+  width: 1200px;
+  margin: 20px auto;
 }
 .scss-product-container {
   display: flex;
   flex-direction: row;
+  border-bottom: 4px solid #dfdfdf;
+  padding-bottom: 20px;
 }
 .scss-grid-md-3 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 33%;
-  margin: 0px 10px;
+  width: 23%;
+  margin: 0px 15px;
 }
 .scss-grid-md-6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 66%;
-  margin: 0px 10px;
+  width: 50%;
+  margin: 0px 15px;
 }
 .scss-shopping-cart {
   margin: auto;
+  width: 100%;
+}
+.scss-shopping-cart-title {
+  text-align: center;
+}
+.scss-list-item {
+  margin-bottom: 30px;
+  .border {
+    margin-bottom: 8px;
+    border: 8px solid #DBDBDB;
+  }
+  .product-title {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .display {
+    display: flex;
+    .grow {
+      flex-grow: 1;
+    }
+  }
+  .product-button {
+    height: 30px;
+    text-transform: uppercase;
+    background: #EFB784;
+    color: #fff;
+    padding: 5px 12px;
+    border: 0px;
+  }
 }
