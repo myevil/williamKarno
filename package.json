@@ -54,10 +54,13 @@
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "3.6.3"
   },
+  "homepage": "https://myevil.github.io/williamKarno/",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "flow": "flow"
   },
   "eslintConfig": {
@@ -120,6 +123,7 @@
     "babel-preset-flow": "^6.23.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
-    "flow-bin": "^0.91.0"
+    "flow-bin": "^0.91.0",
+    "gh-pages": "^2.0.1"
   }
 }
